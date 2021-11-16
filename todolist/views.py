@@ -13,13 +13,13 @@ def base(request):
             name=name
         )
         task.save()
-        return redirect('/table')
+        return redirect('/')
     return render(request, "table.html", {'tasks': task})
 
 def delete(request, id):
     task = Task.objects.get(id=id)
     task.delete()
-    return redirect('/table')
+    return redirect('/')
 
 def edit(request, id):
     task = Task.objects.get(id=id)
@@ -28,7 +28,7 @@ def edit(request, id):
         a = request.POST
         task.name = a["task_name"]
         task.save()
-        return redirect('/table')
+        return redirect('/')
     return render(request, "table_edit.html", {'task': task, 'tasks': tasks})
 
 

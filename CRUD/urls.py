@@ -19,8 +19,8 @@ from todolist.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index"),
+    path('index/', index, name="index"),
     path('table_delete/<int:id>', delete, name="table"),
-    path('table/', base, name="base_table"),
+    path('', base, name="base_table"),
     path('table/<int:id>', edit, name='edit')
 ]
